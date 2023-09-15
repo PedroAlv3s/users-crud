@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Edit - UserAPI</title>
+</head>
+<body>
+	<form action="#" th:action="@{/user/update/{id} (id=${user.id})}" th:object="${user}" method="POST">
+		<label for="name">Name</label>
+		<input type="text" th:field="*{name}" id="name" placeholder="Name"/>
+		<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+		
+		<label for="name">E-mail</label>
+		<input type="email" th:field="*{email}" id="email" placeholder="E-mail"/>
+		<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+		
+		<input type="submit" value="Update"/>
+	</form>
+</body>
+</html>

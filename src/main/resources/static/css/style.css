@@ -1,0 +1,17 @@
+body {
+	text-align: center;
+	color: #14213D;
+	background-color: #E5E5E5;
+	padding: 0px;
+	margin: 0px;
+}
+
+.left {
+	text-align: left;
+	width: 400px;		
+}
+
+.right {
+	text-align: right;
+	width: 400px;		
+}
