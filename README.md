@@ -1,8 +1,8 @@
 # users-api-backend
-An REST API using Spring Boot.
+An example of CRUD using Spring Boot.
 
 ## Tecnologies: 
-Java, Spring, Hibernate, MySQL and Git.
+Java, Spring Boot, Spring MVC, Spring Data JPA, Hibernate, MySQL, Thymeleaf and Git.
 
 ## Tools: 
-MySQL Workbench, Visual Studio Code, Postman and GitHub.
+MySQL Workbench, Visual Studio Code and GitHub.
