@@ -1,0 +1,92 @@
+* {
+    padding: 0px;
+    font-family: 'Consolas';
+    position: relative;
+}
+
+body {
+    height: 90%;
+    width: 100%;
+    background-color: #E5E5E5;
+}
+
+.container {
+    height: 550px;
+    width: 1300px;
+    position: absolute;
+    display: flex;
+    border-radius: 10px;
+    background-color: #F0F0F0;
+    margin-top: 25px;
+    margin-left: 25px;
+}
+
+.left {
+    height: 100%;
+    width: 45%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.right {
+    height: 100%;
+    width: 55%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container {
+    display: block;
+    text-align: center;
+    
+}
+
+h1 {
+    margin-top: 0%;
+    margin-bottom: 40px;
+    font-size: 45px;
+}
+
+.inputs {
+    height: 30px;
+    width: 300px;
+    font-size: 17px;
+    margin-bottom: 20px;
+}
+
+.formImage {
+    margin-right: 10%;
+    height: 550px;
+    width: 550px;
+}
+
+.button {
+    font-size: 20px;
+	text-align: center;
+	padding: 10px;
+	margin: 20px;
+	color: #FFFFFF;
+	background-color: rgb(110, 195, 110);
+	height: 50px;
+	width: 300px;
+	border-radius: 5px;
+	border: 2px solid rgb(35, 120, 40);
+}
+
+.button:hover {
+    background-color: rgb(35, 120, 40);
+	border: 2px solid rgb(110, 195, 110);
+	transition: 0.7s;
+}
+
+.setaImage {
+    display: flex;
+    height: 20px;
+    width: 20px;
+    align-items: baseline;
+    margin-top: 10px;
+    margin-left: 10px;
+}

@@ -2,23 +2,33 @@
 <html>
 <head>
 	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" th:href="@{/css/form.css}" media="screen"/> 
 	<title>Form - UserAPI</title>
 </head>
 <body>
-	<form action="#" th:action="@{/user/save}" th:object="${user}" method="POST">
-		<label for="name">Name</label>
-		<input type="text" th:field="*{name}" id="name" placeholder="Name"/>
-		<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+	<div class="container">
+		<a th:href="@{/user/home}"><img class="setaImage" th:src="@{/images/seta-esquerda.png}" tal="Uma seta"/></a>
+		<div class="left">
+			<h1>Sing up</h1>
+
+			<form action="#" th:action="@{/user/save}" th:object="${user}" method="POST" class="form-container">
+				
+				<input type="text" th:field="*{name}" id="name" placeholder="Name" class="inputs"/> <br />
+				<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+				
+				<input type="email" th:field="*{email}" id="email" placeholder="E-mail" class="inputs"/> <br />
+				<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+				
+				<input type="text" th:field="*{password}" id="password" placeholder="Password" class="inputs"/> <br />
+				<span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+				
+				<input type="submit" value="Save" class="button"/>
+			</form>
+		</div>
 		
-		<label for="email">E-mail</label>
-		<input type="email" th:field="*{email}" id="email" placeholder="E-mail"/>
-		<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
-		
-		<label for="password">Password</label>
-		<input type="text" th:field="*{password}" id="password" placeholder="Password"/>
-		<span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
-		
-		<input type="submit" value="Save"/>
-	</form>
+		<div class="right">
+			<img class="formImage" th:src="@{/images/form.svg}" tal="A form image"/>
+		</div>
+	</div>
 </body>
 </html>
