@@ -3,16 +3,15 @@
 <head>
 	<meta charset="UTF-8">
 	<link rel="stylesheet" type="text/css" th:href="@{/css/form.css}" media="screen"/> 
-	<title>Form - UserAPI</title>
+	<title>Form - UserCRUD</title>
 </head>
 <body>
 	<div class="container">
-		<a th:href="@{/user/home}"><img class="setaImage" th:src="@{/images/seta-esquerda.png}" tal="Uma seta"/></a>
+		<a class="arrow" th:href="@{/user/home}"><img th:src="@{/images/arrow.png}" tal="An arrow pointing to the left!"/></a>
 		<div class="left">
 			<h1>Sing up</h1>
 
-			<form action="#" th:action="@{/user/save}" th:object="${user}" method="POST" class="form-container">
-				
+			<form class="form-container" action="#" th:action="@{/user/save}" th:object="${user}" method="POST">
 				<input type="text" th:field="*{name}" id="name" placeholder="Name" class="inputs"/> <br />
 				<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
 				
@@ -27,7 +26,7 @@
 		</div>
 		
 		<div class="right">
-			<img class="formImage" th:src="@{/images/form.svg}" tal="A form image"/>
+			<img class="formImage" th:src="@{/images/form.svg}" tal="A form image!"/>
 		</div>
 	</div>
 </body>

@@ -2,19 +2,32 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Edit - UserAPI</title>
+	<link rel="stylesheet" type="text/css" th:href="@{/css/form.css}" media="screen"/>
+	<title>Edit - UserCRUD</title>
 </head>
 <body>
-	<form action="#" th:action="@{/user/update/{id} (id=${user.id})}" th:object="${user}" method="POST">
-		<label for="name">Name</label>
-		<input type="text" th:field="*{name}" id="name" placeholder="Name"/>
-		<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
-		
-		<label for="name">E-mail</label>
-		<input type="email" th:field="*{email}" id="email" placeholder="E-mail"/>
-		<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
-		
-		<input type="submit" value="Update"/>
-	</form>
+	<div class="container">
+		<a class="arrow" th:href="@{/user/home}"><img th:src="@{/images/arrow.png}" tal="An arrow pointing to the left!"/></a>
+
+		<h1>Update</h1>
+		<div class="left">
+			<form class="form-container" action="#" th:action="@{/user/update/{id} (id=${user.id})}" th:object="${user}" method="POST">
+				<input type="text" th:field="*{name}" id="name" placeholder="Name" class="inputs"/>
+				<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>
+				
+				<input type="email" th:field="*{email}" id="email" placeholder="E-mail" class="inputs"/>
+				<span th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
+
+				<input type="text" th:field="*{password}" id="password" placeholder="Password" class="inputs"/> <br />
+				<span th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
+				
+				<input type="submit" value="Update" class="button"/>
+			</form>
+		</div>
+
+		<div class="right">
+			<img class="formImage" th:src="@{/images/form.svg}" tal="A form image!"/>
+		</div>
+	</div>
 </body>
 </html>

@@ -82,11 +82,25 @@ h1 {
 	transition: 0.7s;
 }
 
-.setaImage {
-    display: flex;
-    height: 20px;
-    width: 20px;
-    align-items: baseline;
+.arrow {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
     margin-top: 10px;
     margin-left: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow img {
+    
+    height: 20px;
+    width: 20px;
+    margin: 20px;
+}
+
+.arrow:hover {
+    background-color: #E5E5E5;
+    transition: 0.5s;
 }
