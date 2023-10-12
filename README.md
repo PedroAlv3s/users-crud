@@ -1,4 +1,4 @@
-# users-api-backend
+# users-crud
 An example of CRUD using Spring Boot.
 
 ## Tecnologies: 
