@@ -41,7 +41,7 @@ public class UserController {
 			return "/user/form";
 		
 		repository.save(user);
-		return "/user/list";
+		return "redirect:/user/list";
 	}
 	
 	@GetMapping(value = "/list")
