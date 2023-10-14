@@ -8,9 +8,9 @@
 <body>
 	<div class="container">
 		<a class="arrow" th:href="@{/user/home}"><img th:src="@{/images/arrow.png}" tal="An arrow pointing to the left!"/></a>
-
-		<h1>Update</h1>
 		<div class="left">
+			<h1>Update</h1>
+			
 			<form class="form-container" action="#" th:action="@{/user/update/{id} (id=${user.id})}" th:object="${user}" method="POST">
 				<input type="text" th:field="*{name}" id="name" placeholder="Name" class="inputs"/>
 				<span th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></span>

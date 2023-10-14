@@ -6,33 +6,33 @@
 	<title>List of Users - UserCRUD</title>
 </head>
 <body>
-	<div class="container">
+	<div class="container">		
+		<a class="arrow" th:href="@{/user/home}"><img th:src="@{/images/arrow.png}" tal="An arrow pointing to the left!"/></a>
 		<div class="left">	
 			<div class="left-contant" th:switch="${users}">
 				<h2 th:case="null">No users yet!</h2>
 				<div th:case="*">
 					<h2>Users</h2>
-					<table>
-						<thead>
+					<table class="table">
+						<thead class="titles">
 							<tr>
 								<th>Name</th>
 								<th>E-mail</th>
 								<th>Actions</th>
 							</tr>
 						</thead>
-						<tbody>
+						<tbody class="data">
 							<tr th:each="user : ${users}">
 								<td th:text="${user.name}"></td>
 								<td th:text="${user.email}"></td>
 								<td>
-									<a th:href="@{/user/delete/{id} (id=${user.id})}">Delete</a>
-									<a th:href="@{/user/edit/{id} (id=${user.id})}">Edit</a>
+									<a class="button" id="delete" th:href="@{/user/delete/{id} (id=${user.id})}">Delete</a>
+									<a class="button" id="edit" th:href="@{/user/edit/{id} (id=${user.id})}">Edit</a>
 								</td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
-				<a th:href="@{/user/home}">Home</a>
 			</div>
 		</div>
 
