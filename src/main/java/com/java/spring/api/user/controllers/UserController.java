@@ -21,7 +21,7 @@ public class UserController {
 	
 	private UserRepository repository;
 	
-	public UserController(UserRepository repository) {
+	UserController(UserRepository repository) {
 		this.repository = repository;
 	}
 
@@ -46,7 +46,7 @@ public class UserController {
 	
 	@GetMapping(value = "/list")
 	public String list(Model model) {
-		List<User> users = (List<User>) repository.findAll();
+		List<User> users = repository.findAll();
 		model.addAttribute("users", users);
 		return "list";
 	}
@@ -61,16 +61,6 @@ public class UserController {
 		return "redirect:/user/list";
 	}
 	
-	@GetMapping(value = "/edit/{id}")
-	public String editForm(@PathVariable("id") Long id, Model model) {
-		User user = repository.findById(id)
-				.orElseThrow(() -> 
-				new IllegalArgumentException("Invalid user id: " + id));
-		
-		model.addAttribute("user", user);
-		return "edit";
-	}
-	
 	@PostMapping(value = "/update/{id}")
 	public String update(@PathVariable("id") Long id, @Valid User user, 
 			BindingResult result, Model model) {
@@ -81,5 +71,15 @@ public class UserController {
 		
 		repository.save(user);
 		return "redirect:/user/list";
+	}
+
+	@GetMapping(value = "/edit/{id}")
+	public String editForm(@PathVariable("id") Long id, Model model) {
+		User user = repository.findById(id)
+				.orElseThrow(() -> 
+				new IllegalArgumentException("Invalid user id: " + id));
+		
+		model.addAttribute("user", user);
+		return "edit";
 	}
 }
